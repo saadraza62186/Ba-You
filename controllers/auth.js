@@ -51,7 +51,7 @@ export const signin = async (req, res, next) => {
       .cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // Secure in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "None", // Prevent CSRF
       })
       .status(200)
       .json(user);
@@ -69,7 +69,7 @@ export const googleAuth = async (req, res, next) => {
       .cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // Secure in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "None", // Prevent CSRF
       })
       .status(200)
       .json(user._doc); // Send user document as response
@@ -84,7 +84,7 @@ export const googleAuth = async (req, res, next) => {
       .cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // Secure in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "None", // Prevent CSRF
       })
       .status(200)
       .json(savedUser._doc); 
